@@ -1,11 +1,3 @@
-// Theme toggle. Dark is the default; a saved "light" choice is restored in <head>.
-document.querySelectorAll("[data-theme-toggle]").forEach((b) =>
-  b.addEventListener("click", () => {
-    const light = document.documentElement.classList.toggle("light");
-    try { localStorage.setItem("theme", light ? "light" : "dark"); } catch (e) {}
-  })
-);
-
 // Mobile menu
 const menuBtn = document.getElementById("menu-btn");
 const menu = document.getElementById("mobile-menu");

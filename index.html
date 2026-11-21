@@ -22,12 +22,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-  <script>
-    // Dark by default; restore a visitor's saved light preference before paint.
-    try {
-      if (localStorage.getItem("theme") === "light") document.documentElement.classList.add("light");
-    } catch (e) {}
-  </script>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body class="font-sans text-muted antialiased">
@@ -42,17 +36,9 @@
         <li><a class="nav-link" href="#work">work</a></li>
         <li><a class="nav-link" href="#stack">stack</a></li>
         <li><a class="nav-link" href="#contact">contact</a></li>
-        <li><button type="button" data-theme-toggle class="rounded-md p-2 text-muted transition hover:text-fg" aria-label="Switch light or dark theme">
-          <svg class="icon-sun h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-          <svg class="icon-moon h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-        </button></li>
         <li><a class="btn btn-primary !py-2" href="https://calendly.com/edison-cmeer/30min" target="_blank" rel="noopener noreferrer">Book a call</a></li>
       </ul>
       <div class="flex items-center gap-1 md:hidden">
-        <button type="button" data-theme-toggle class="rounded-md p-2 text-muted transition hover:text-fg" aria-label="Switch light or dark theme">
-          <svg class="icon-sun h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-          <svg class="icon-moon h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-        </button>
         <button id="menu-btn" type="button" class="rounded-md p-2 text-fg" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
           <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
@@ -142,6 +128,7 @@
               <li>Workflows for lead intake, follow-up, reminders and reviews</li>
               <li>Calendars, forms, surveys and booking flows</li>
               <li>SMS and email templates and nurture sequences</li>
+              <li>Email deliverability: sending domain, SPF, DKIM and DMARC set up so your emails reach the inbox</li>
               <li>Snapshot setup and cleanup of messy sub-accounts</li>
             </ul>
           </article>
@@ -149,10 +136,11 @@
             <div class="flex items-center gap-2">
               <img src="assets/logos/zapier.svg" alt="" class="h-9 w-9 rounded-md bg-white p-1 ring-1 ring-line" width="36" height="36">
               <img src="assets/logos/make.svg" alt="" class="h-9 w-9 rounded-md bg-white p-1 ring-1 ring-line" width="36" height="36">
+              <img src="assets/logos/n8n.svg" alt="" class="h-9 w-9 rounded-md bg-white p-1 ring-1 ring-line" width="36" height="36">
             </div>
             <h3 class="mt-5 text-xl font-medium text-fg">Automation and AI</h3>
             <ul class="mt-4 space-y-2.5 text-sm leading-relaxed">
-              <li>Zapier and Make scenarios between the apps you already use</li>
+              <li>Zapier, Make and n8n workflows between the apps you already use</li>
               <li>GHL connected to your payments, sheets and team chat</li>
               <li>AI assistants and prompt templates (ChatGPT, Claude)</li>
               <li>Data cleanup, imports and simple reporting</li>
@@ -169,6 +157,18 @@
             </ul>
           </article>
         </div>
+        <article class="card reveal mt-5 grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+          <div>
+            <p class="font-mono text-xs text-accent">fix log / email deliverability</p>
+            <h3 class="mt-3 text-lg font-medium text-fg">GHL emails were landing in spam. Now they reach the inbox.</h3>
+            <p class="mt-2 max-w-2xl text-sm leading-relaxed">Emails sent from a GoHighLevel account kept going to spam. I adjusted the GHL email sending settings and the domain's DNS records until SPF, DKIM and DMARC all passed, so mail servers could verify the emails really came from that domain. After that, they started arriving in the inbox.</p>
+          </div>
+          <ul class="flex flex-wrap gap-2 font-mono text-xs md:flex-col" aria-label="Email authentication results">
+            <li class="flex items-center gap-2 rounded-md border border-line px-3 py-1.5 text-fg"><span class="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true"></span>SPF: pass</li>
+            <li class="flex items-center gap-2 rounded-md border border-line px-3 py-1.5 text-fg"><span class="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true"></span>DKIM: pass</li>
+            <li class="flex items-center gap-2 rounded-md border border-line px-3 py-1.5 text-fg"><span class="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true"></span>DMARC: pass</li>
+          </ul>
+        </article>
       </div>
     </section>
 
@@ -249,6 +249,7 @@
             <ul class="flex flex-wrap gap-2">
               <li class="flex items-center gap-2 rounded-lg border border-line bg-bg px-2.5 py-1.5 text-sm text-fg"><span class="flex h-6 w-6 items-center justify-center rounded bg-white p-0.5 ring-1 ring-line"><img src="assets/logos/zapier.svg" alt="" class="h-full w-full object-contain" loading="lazy" width="20" height="20"></span>Zapier</li>
               <li class="flex items-center gap-2 rounded-lg border border-line bg-bg px-2.5 py-1.5 text-sm text-fg"><span class="flex h-6 w-6 items-center justify-center rounded bg-white p-0.5 ring-1 ring-line"><img src="assets/logos/make.svg" alt="" class="h-full w-full object-contain" loading="lazy" width="20" height="20"></span>Make</li>
+              <li class="flex items-center gap-2 rounded-lg border border-line bg-bg px-2.5 py-1.5 text-sm text-fg"><span class="flex h-6 w-6 items-center justify-center rounded bg-white p-0.5 ring-1 ring-line"><img src="assets/logos/n8n.svg" alt="" class="h-full w-full object-contain" loading="lazy" width="20" height="20"></span>n8n</li>
               <li class="flex items-center gap-2 rounded-lg border border-line bg-bg px-2.5 py-1.5 text-sm text-fg"><span class="flex h-6 w-6 items-center justify-center rounded bg-white p-0.5 ring-1 ring-line"><img src="assets/logos/chatgpt.svg" alt="" class="h-full w-full object-contain" loading="lazy" width="20" height="20"></span>ChatGPT</li>
               <li class="flex items-center gap-2 rounded-lg border border-line bg-bg px-2.5 py-1.5 text-sm text-fg"><span class="flex h-6 w-6 items-center justify-center rounded bg-white p-0.5 ring-1 ring-line"><img src="assets/logos/claude.svg" alt="" class="h-full w-full object-contain" loading="lazy" width="20" height="20"></span>Claude</li>
               <li class="flex items-center gap-2 rounded-lg border border-line bg-bg px-2.5 py-1.5 text-sm text-fg"><span class="flex h-6 w-6 items-center justify-center rounded bg-white p-0.5 ring-1 ring-line"><img src="assets/logos/microsoft-copilot.svg" alt="" class="h-full w-full object-contain" loading="lazy" width="20" height="20"></span>Copilot</li>
@@ -282,13 +283,7 @@
             </ul>
           </div>
         </div>
-        <div class="reveal mt-6 grid gap-5 md:grid-cols-[1fr_auto] md:items-center">
-          <p class="text-sm leading-relaxed">Before freelancing, I spent 7 years on remote engineering teams building an education platform, a property management SaaS and a healthcare screening system in Rails, React, Angular and PostgreSQL.</p>
-          <a href="assets/zapier-building-intermediate-zaps.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-3 rounded-lg border border-line px-3 py-2 text-sm text-fg transition hover:border-accent/60">
-            <img src="assets/logos/zapier.svg" alt="" class="h-6 w-6 rounded bg-white p-0.5" width="24" height="24">
-            <span>Zapier certified<span class="block font-mono text-[11px] text-muted">Building Intermediate Zaps, Oct 2026</span></span>
-          </a>
-        </div>
+        <p class="reveal mt-6 text-sm leading-relaxed">Before freelancing, I spent 7 years on remote engineering teams building an education platform, a property management SaaS and a healthcare screening system in Rails, React, Angular and PostgreSQL.</p>
       </div>
     </section>
 
@@ -314,7 +309,7 @@
           <li class="card reveal md:[transition-delay:200ms]">
             <span class="font-mono text-xs text-accent">03</span>
             <h3 class="mt-3 font-medium text-fg">Build and hand over</h3>
-            <p class="mt-2 text-sm leading-relaxed">Regular updates while I build, then a walkthrough video and docs so your team can run it.</p>
+            <p class="mt-2 text-sm leading-relaxed">Regular updates while I build, then a live handover call and a written guide with screenshots so your team can run it.</p>
           </li>
         </ol>
         <div class="reveal mt-10 flex flex-col gap-6 rounded-xl border border-accent/60 bg-accent/5 p-6 sm:p-8 md:flex-row md:items-center md:justify-between">

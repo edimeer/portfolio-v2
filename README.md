@@ -12,13 +12,13 @@ Portfolio site for my freelance work: GoHighLevel builds first, plus automation,
 - Stack: the tools I use, grouped by area
 - Contact: how a project goes, plus booking, email and LinkedIn links
 
-Dark theme by default with a light theme toggle that remembers your choice. Animations turn off when the visitor has `prefers-reduced-motion` set.
+Dark theme only. Animations turn off when the visitor has `prefers-reduced-motion` set.
 
 ## Built with
 
 - HTML
 - [Tailwind CSS](https://tailwindcss.com/) v3 (compiled with the Tailwind CLI)
-- Vanilla JavaScript for the theme toggle, mobile menu, scroll reveal, workflow animation and hover-play videos
+- Vanilla JavaScript for the mobile menu, scroll reveal, workflow animation and hover-play videos
 - Space Grotesk and JetBrains Mono from Google Fonts
 - Hosted on GitHub Pages
 
@@ -32,7 +32,7 @@ portfolio-v2/
 ├── tailwind.config.js    # Fonts and color names mapped to the tokens
 ├── assets/
 │   ├── styles.css        # Compiled CSS (rebuilt by CI on deploy)
-│   ├── main.js           # Theme, menu, reveal, workflow, hover-play
+│   ├── main.js           # Menu, reveal, workflow, hover-play
 │   ├── logos/            # Tool logos (SVG)
 │   └── work/             # Walkthrough videos for the side projects
 └── package.json
@@ -57,7 +57,7 @@ Then open http://localhost:8000.
 
 ## Change the colors
 
-All colors live as CSS variables at the top of `src/input.css`: one set for dark (`:root`) and one for light (`html.light`). Change a value there and every part of the page that uses it follows.
+All colors live as CSS variables in `:root` at the top of `src/input.css`. Change a value there and every part of the page that uses it follows.
 
 ## Deploy
 

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Color tokens. Dark is the default; html.light switches to the light set. */
+/* Color tokens (dark theme only). */
 :root {
   color-scheme: dark;
   --bg: 11 13 16;
@@ -14,17 +14,7 @@
   --accent-ink: 6 18 31;
   --dot: 37 42 49;
 }
-html.light {
-  color-scheme: light;
-  --bg: 246 247 249;
-  --surface: 255 255 255;
-  --line: 218 223 229;
-  --fg: 13 17 23;
-  --muted: 82 92 103;
-  --accent: 0 102 214;
-  --accent-ink: 255 255 255;
-  --dot: 208 214 221;
-}
+
 
 html { scroll-behavior: smooth; }
 body { background: rgb(var(--bg)); }
@@ -73,8 +63,3 @@ body { background: rgb(var(--bg)); }
   .reveal { opacity: 1; transform: none; transition: none; }
   .wf-link.is-active::after { animation: none; }
 }
-
-/* Theme toggle icons: show the sun in dark mode, the moon in light mode. */
-.icon-moon { display: none; }
-html.light .icon-sun { display: none; }
-html.light .icon-moon { display: block; }
